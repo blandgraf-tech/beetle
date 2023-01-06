@@ -1,5 +1,6 @@
 def on_forever():
-    DFRobotMaqueenPlus.servo_run(Servos.S1, 10)
+    pins.servo_write_pin(AnalogPin.P0, 0)
     basic.pause(1000)
-    DFRobotMaqueenPlus.servo_run(Servos.S1, 110)
+    pins.servo_write_pin(AnalogPin.P0, 45)
+    basic.pause(1000)
 basic.forever(on_forever)

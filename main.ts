@@ -1,14 +1,13 @@
-let direction = 0
-let angle = 0
-basic.forever(function () {
-    direction = 1
-    angle = 10
-    pins.servoWritePin(AnalogPin.P0, direction)
-    pins.servoWritePin(AnalogPin.P0, angle)
-    basic.pause(1000)
-    direction = direction * -1
-    angle = 50
-    pins.servoWritePin(AnalogPin.P0, direction)
-    pins.servoWritePin(AnalogPin.P0, angle)
-    basic.pause(1000)
-})
+pins.servoWritePin(AnalogPin.P0, 45)
+basic.pause(1000)
+pins.servoWritePin(AnalogPin.P0, 90)
+basic.pause(1000)
+DFRobotMaqueenPlus.PID(PID.ON)
+DFRobotMaqueenPlus.mototRun(Motors.ALL, Dir.CCW, 30)
+basic.pause(5000)
+DFRobotMaqueenPlus.mototStop(Motors.M1)
+basic.pause(500)
+DFRobotMaqueenPlus.mototStop(Motors.ALL)
+DFRobotMaqueenPlus.mototRun(Motors.ALL, Dir.CCW, 30)
+basic.pause(2000)
+pins.servoWritePin(AnalogPin.P0, 45)
